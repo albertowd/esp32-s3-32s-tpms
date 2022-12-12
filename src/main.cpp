@@ -12,6 +12,7 @@
 #include "NimBLEDevice.h"
 
 #include <TPMS.h>
+#include <TPMSUnits.h>
 
 NimBLEScan* pBLEScan;
 
