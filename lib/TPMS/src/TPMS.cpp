@@ -17,6 +17,7 @@ TPMS::Data::Data() :
 
 TPMS::Data::Data(const std::string hexData) : TPMS::Data() {
     this->address = hexData.substr(TPMS::BYTE_OFFSETS::ADDRESS * 2, TPMS::BYTE_SIZES::ADDRESS * 2);
+    this->address.insert(10, 1, ':').insert(8, 1, ':').insert(6, 1, ':').insert(4, 1, ':').insert(2, 1, ':');
     this->alarmFlags = TPMS::Parser::readUInt8(hexData, TPMS::BYTE_OFFSETS::ALARM_FLAGS);
     this->battery = TPMS::Parser::readUInt8(hexData, TPMS::BYTE_OFFSETS::BATTERY);
     this->manufacturer = hexData.substr(TPMS::BYTE_OFFSETS::MANUFACTURER * 2, TPMS::BYTE_SIZES::MANUFACTURER * 2);
