@@ -1,5 +1,8 @@
 #include "string"
 
+#ifndef TPMS_CONVERTERS_H
+#define TPMS_CONVERTERS_H
+
 namespace TPMS {
     class Converters {
         public:
@@ -8,3 +11,5 @@ namespace TPMS {
             static float pressureKPaToPsi(const float pressureKPa);
     };
 }
+
+#endif

@@ -1,5 +1,10 @@
-namespace TPMS {
-    namespace BYTE_OFFSETS {
+#ifndef TPMS_UNITS_H
+#define TPMS_UNITS_H
+
+namespace TPMS
+{
+    namespace BYTE_OFFSETS
+    {
         const static size_t ADDRESS = 2;
         const static size_t ALARM_FLAGS = 17;
         const static size_t BATTERY = 16;
@@ -8,7 +13,8 @@ namespace TPMS {
         const static size_t TEMPERATURE = 12;
     }
 
-    namespace BYTE_SIZES {
+    namespace BYTE_SIZES
+    {
         const static size_t ADDRESS = 6;
         const static size_t ALARM_FLAGS = 1;
         const static size_t BATTERY = 1;
@@ -18,3 +24,5 @@ namespace TPMS {
         const static size_t TEMPERATURE = 4;
     }
 }
+
+#endif

@@ -1,5 +1,8 @@
 #include "string"
 
+#ifndef TPMS_H
+#define TPMS_H
+
 namespace TPMS {
     class Data {
         public:
@@ -20,3 +23,5 @@ namespace TPMS {
             const std::string toString() const;
     };
 }
+
+#endif
