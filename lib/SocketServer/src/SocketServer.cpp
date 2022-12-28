@@ -15,7 +15,8 @@ SocketServer::~SocketServer()
 {
     if (this->socketId)
     {
-        if (this->clientId) {
+        if (this->clientId)
+        {
             Serial.printf("Closing client... %d\n", this->clientId);
             const int closeRet(close(this->clientId));
             if (closeRet)
@@ -80,7 +81,8 @@ void SocketServer::initServer()
 
 void SocketServer::writeToClient(std::string data)
 {
-    if (this->clientId && this->socketId) {
+    if (this->clientId && this->socketId)
+    {
         const char *dataPtr(data.c_str());
         const size_t dataSize(data.length());
 

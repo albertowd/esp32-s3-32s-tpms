@@ -4,18 +4,18 @@
 #include "TPMSParser.h"
 #include "TPMSUnits.h"
 
-TPMS::Data::Data() :
-    address(""),
-    alarmFlags(0),
-    battery(0),
-    manufacturer(""),
-    pressureBar(0),
-    pressureKPa(0),
-    pressurePsi(0),
-    temperatureC(0),
-    temperatureF(0) {}
+TPMS::Data::Data() : address(""),
+                     alarmFlags(0),
+                     battery(0),
+                     manufacturer(""),
+                     pressureBar(0),
+                     pressureKPa(0),
+                     pressurePsi(0),
+                     temperatureC(0),
+                     temperatureF(0) {}
 
-TPMS::Data::Data(const std::string hexData) : TPMS::Data() {
+TPMS::Data::Data(const std::string hexData) : TPMS::Data()
+{
     this->address = hexData.substr(TPMS::BYTE_OFFSETS::ADDRESS * 2, TPMS::BYTE_SIZES::ADDRESS * 2);
     this->address.insert(10, 1, ':').insert(8, 1, ':').insert(6, 1, ':').insert(4, 1, ':').insert(2, 1, ':');
     this->alarmFlags = TPMS::Parser::readUInt8(hexData, TPMS::BYTE_OFFSETS::ALARM_FLAGS);
@@ -30,7 +30,8 @@ TPMS::Data::Data(const std::string hexData) : TPMS::Data() {
 
 TPMS::Data::~Data() {}
 
-const std::string TPMS::Data::toString() const {
+const std::string TPMS::Data::toString() const
+{
     std::string info("Manufacturer: ");
     info += this->manufacturer;
     info += "\tAddress: ";
@@ -48,7 +49,8 @@ const std::string TPMS::Data::toString() const {
     info += " ºF\tBattery: ";
     info += std::to_string(this->battery);
     info += " %";
-    if (this->alarmFlags) {
+    if (this->alarmFlags)
+    {
         info += "\tAlarm Flags: ";
         info += std::to_string(this->alarmFlags);
     }

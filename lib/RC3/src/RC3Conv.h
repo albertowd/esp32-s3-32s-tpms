@@ -3,7 +3,8 @@
 
 #include <string>
 
-namespace RC3 {
+namespace RC3
+{
 	std::string toFixed(const double value, const unsigned short precision);
 	std::string toHex(const char value);
 }
