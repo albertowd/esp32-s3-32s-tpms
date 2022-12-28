@@ -167,5 +167,5 @@ void loop()
     TPMSDisplay::Tyre::renderRR(entry.getAnalog(RC3::A7), entry.getAnalog(RC3::A8));
 #endif
 
-    delay(250);
+    delay(500);
 }
