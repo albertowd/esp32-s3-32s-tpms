@@ -23,6 +23,7 @@ namespace TPMSDisplay
         static bool areDiff(const double value1, const double value2);
         static unsigned int pressureColor(const double value);
         static unsigned int temperatureColor(const double value);
+        static unsigned int temperatureTyreFont(const double value);
         static void renderFL(const double pressure, const double temperature);
         static void renderFR(const double pressure, const double temperature);
         static void renderRL(const double pressure, const double temperature);
