@@ -120,12 +120,9 @@ void setup()
     TPMSDisplay::Base::renderBoot();
 #endif
 
-    delay(2000);
-
     connectToWifi();
 
-    delay(2000);
-
+    // TODO: wait for a button press
     // waitForConnection();
 
     NimBLEDevice::setScanDuplicateCacheSize(10);
